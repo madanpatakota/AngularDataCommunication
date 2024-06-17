@@ -6,6 +6,13 @@ import { CustomerRegistraionComponent } from './customer-registraion/customer-re
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { CustomerRegistraionHistoryComponent } from './customer-registraion-history/customer-registraion-history.component';
 
+
+// CustomerRegistraionComponent cus= new CustomerRegistraionComponent();// angular
+// cust.__________________
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
