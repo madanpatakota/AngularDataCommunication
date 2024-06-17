@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularDataCommunication';
+
+
+  Customer = {
+     Name : "Madan",
+     Password : "&*&^GYG*G",
+     Email : "madan@gmail.com"
+  }
+
+
 }

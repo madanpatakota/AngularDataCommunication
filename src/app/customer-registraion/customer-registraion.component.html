@@ -1,0 +1,65 @@
+<div class="card h-100">
+  <div class="card-header bg-primary text-white">
+    Customer Registration Page
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3 row">
+        <label for="name" class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Enter your name"
+            #customerName
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="password" class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="Password"
+            placeholder="Enter your password"
+            #customerpassword
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="email" class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input
+            type="email"
+            class="form-control"
+            id="Email"
+            placeholder="Enter your Email"
+            #customeremail
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-9 offset-sm-3">
+            <!-- <button
+             (click)="evtPostClick(customerName,customerpassword,customeremail)"  
+             class="btn btn-primary btn-block">Post</button> |
+            <button class="btn btn-danger btn-block">Clear</button> -->
+
+
+
+            <input type="button"
+             (click)="evtPostClick(customerName,customerpassword,customeremail)"  
+             class="btn btn-primary btn-block" value="Post" /> |
+             
+            <input type="button" class="btn btn-danger btn-block" value="Clear" />
+
+
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+</div>
