@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-customer-details',
   templateUrl: './customer-details.component.html',
   styleUrls: ['./customer-details.component.css']
 })
-export class CustomerDetailsComponent implements OnInit {
+export class CustomerDetailsComponent implements OnInit , OnChanges {
 
   @Input() customerRecord:any;
 
@@ -14,10 +14,21 @@ export class CustomerDetailsComponent implements OnInit {
   customerName = "";
   customerEmail = "";
 
+
+  //If any input changes will be happen from parent... 
+  // this life cycel hook automatically fired.
+  // updates | notifications if any one change the customerRecord
+  ngOnChanges(): void {
+    console.log("ng onchanges From Customer details comp " , this.customerRecord);
+    this.customerName = this.customerRecord.Name;
+  }
+
+
+  //its fired automatically when your comp initlization
   ngOnInit(): void {
     this.customerName = this.customerRecord.Name;
     this.customerEmail = this.customerRecord.Email;
-    console.log("Input data is " , this.customerRecord);
+    console.log("ng oninit Input data is " , this.customerRecord);
   }
 
 }

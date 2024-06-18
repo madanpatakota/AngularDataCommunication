@@ -1,12 +1,53 @@
-<div class="container">
+<div class="container" style="background-color: azure">
+  <!--Main page Heading section-->
+  <div class="m-2">
+    <h6 class="display-6">Customer Page</h6>
+    <div class="row mt-4 p-3 bg-dark text-light">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-3">
+            <span class=""> Customer Name : </span>
+            <!-- <span class="text-monospace fs-5"> {{ Customer.Name }}</span> -->
+            <input
+              type="text"
+              class="form-control"
+              [value]="Customer.Name"
+              #customerName
+            />
+          </div>
+          <div class="col-1">
+            <input
+              type="button"
+              value="Click"
+              class="btn btn-primary"
+              (click)="updateCustomerName(customerName)"
+            />
+          </div>
+          <div class="col-3">
+            <span class=""> Customer Password : </span>
+            <span class="text-monospace fs-5"> {{ Customer.Password }}</span>
+            
+          </div>
+          <div class="col-3">
+            <span class=""> Customer Email : </span>
+            <span class="text-monospace fs-5"> {{ Customer.Email }}</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="mt-4">
     <div class="row">
       <div class="col-md-6">
-        <app-customer-registraion></app-customer-registraion>
+      <app-customer-registraion 
+        (customerEventEmitter) = "evtCustomerReceiveInfo($event)">
+      </app-customer-registraion>
       </div>
       <div class="col-md-6">
-        <app-customer-details 
-        [customerRecord] = "Customer" 
+        <app-customer-details
+          [customerRecord]="Customer"
         ></app-customer-details>
       </div>
     </div>
