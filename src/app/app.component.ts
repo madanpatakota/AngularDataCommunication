@@ -22,13 +22,16 @@ export class AppComponent {
 
 
   //click button 
-  updateCustomerName(customerName: HTMLInputElement) {
-    console.log(customerName.value);
+  updateCustomerName(customerName: HTMLInputElement , 
+    customerPassword : HTMLInputElement,
+    customerEmail : HTMLInputElement
+  ) {
+    //console.log(customerName.value);
 
     this.Customer = {
       Name: customerName.value,
-      Password: "&*&^GYG*G",
-      Email: "madan@gmail.com"
+      Password: customerPassword.value,
+      Email: customerEmail.value
     }
 
     // this.Customer.Password 
@@ -38,9 +41,16 @@ export class AppComponent {
   evtCustomerReceiveInfo($event: any) {
     console.log("Now i receive the data in appcomponent  ", $event)
 
-    this.Customer.Name = $event.Name;
-    this.Customer.Email = $event.Email
-    this.Customer.Password = $event.Password;
+    // this.Customer.Name = $event.Name;
+    // this.Customer.Email = $event.Email
+    // this.Customer.Password = $event.Password;
+
+
+    this.Customer = {
+       Name  : $event.Name,
+       Email : $event.Email,
+       Password : $event.Password
+    }
 
 
     // this.Customer = {

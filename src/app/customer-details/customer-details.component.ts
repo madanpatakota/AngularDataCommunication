@@ -21,6 +21,7 @@ export class CustomerDetailsComponent implements OnInit , OnChanges {
   ngOnChanges(): void {
     console.log("ng onchanges From Customer details comp " , this.customerRecord);
     this.customerName = this.customerRecord.Name;
+    this.customerEmail = this.customerRecord.Email;
   }
 
 

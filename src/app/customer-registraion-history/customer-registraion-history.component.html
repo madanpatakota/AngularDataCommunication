@@ -1,1 +1,35 @@
-<p>customer-registraion-history works!</p>
+<!-- <p>customer-registraion-history works!</p> -->
+
+<div class="card h-100">
+  <div class="card-header bg-success text-white">
+    <div class="row">
+      <div class="col-8 mt-1">
+        <span class="text-right">Customers Registration History</span>
+      </div>
+      <div class="col-2"></div>
+      <!-- <div class="col-2">
+        <input type="button" value="Get" class="btn btn-info text-white" />
+      </div> -->
+    </div>
+  </div>
+
+  
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cRecord of CustomerRecords ; let index = index">
+          <td>{{index + 1}}</td>
+          <td>{{cRecord.Name}}</td>
+          <td>{{cRecord.Email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

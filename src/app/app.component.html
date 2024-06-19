@@ -1,36 +1,52 @@
-<div class="container" style="background-color: azure">
+
+<div class="container" style="background-color: antiquewhite">
   <!--Main page Heading section-->
-  <div class="m-2">
+
+  <div class="m-3">
     <h6 class="display-6">Customer Page</h6>
-    <div class="row mt-4 p-3 bg-dark text-light">
+    <hr>
+    <div class="row mt-4 p-3 text-light">
       <div class="col-12">
         <div class="row">
           <div class="col-3">
-            <span class=""> Customer Name : </span>
+            <span class="text-primary fw-bold"> Customer Name : </span>
             <!-- <span class="text-monospace fs-5"> {{ Customer.Name }}</span> -->
-            <input
+            <input 
               type="text"
               class="form-control"
               [value]="Customer.Name"
               #customerName
             />
           </div>
+          
+          <div class="col-3">
+            <span class="text-primary fw-bold"> Customer Password : </span>
+            <!-- <span class="text-monospace fs-5"> {{ Customer.Password }}</span> -->
+            <input
+              type="text"
+              class="form-control"
+              [value]="Customer.Password"
+              #customerPassword
+            />
+          </div>
+          <div class="col-3">
+            <span class="text-primary fw-bold"> Customer Email : </span>
+            <!-- <span class="text-monospace fs-5"> {{ Customer.Email }}</span> -->
+            <input
+            type="text"
+            class="form-control"
+            [value]="Customer.Email"
+            #customerEmail
+          />
+          </div>
+          <div class="col-1"></div>
           <div class="col-1">
             <input
               type="button"
               value="Click"
               class="btn btn-primary"
-              (click)="updateCustomerName(customerName)"
+              (click)="updateCustomerName(customerName, customerPassword , customerEmail)"
             />
-          </div>
-          <div class="col-3">
-            <span class=""> Customer Password : </span>
-            <span class="text-monospace fs-5"> {{ Customer.Password }}</span>
-            
-          </div>
-          <div class="col-3">
-            <span class=""> Customer Email : </span>
-            <span class="text-monospace fs-5"> {{ Customer.Email }}</span>
           </div>
           
         </div>
@@ -41,22 +57,23 @@
   <div class="mt-4">
     <div class="row">
       <div class="col-md-6">
-      <app-customer-registraion 
-        (customerEventEmitter) = "evtCustomerReceiveInfo($event)">
+      <app-customer-registraion (customerEventEmitter) = "evtCustomerReceiveInfo($event)">
+      <!-- <input type="text"   (keyUp)="" /> -->
       </app-customer-registraion>
       </div>
       <div class="col-md-6">
-        <app-customer-details
-          [customerRecord]="Customer"
-        ></app-customer-details>
+        <app-customer-details [customerRecord]="Customer"></app-customer-details>
+      <!-- //<p                     id="ParagraphID">          </p> -->
       </div>
     </div>
   </div>
   <div class="mt-4">
     <div class="row">
       <div class="col-md-10">
-        <app-customer-registraion-history></app-customer-registraion-history>
+        <app-customer-registraion-history [historyCustomerRecord]="Customer"></app-customer-registraion-history>
+  <!--  <input  type ="text"     [value]="" /> -->
       </div>
     </div>
   </div>
+  <br>
 </div>
