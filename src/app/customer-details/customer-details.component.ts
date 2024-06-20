@@ -19,7 +19,7 @@ export class CustomerDetailsComponent implements OnInit , OnChanges {
   // this life cycel hook automatically fired.
   // updates | notifications if any one change the customerRecord
   ngOnChanges(): void {
-    console.log("ng onchanges From Customer details comp " , this.customerRecord);
+    //console.log("ng onchanges From Customer details comp " , this.customerRecord);
     this.customerName = this.customerRecord.Name;
     this.customerEmail = this.customerRecord.Email;
   }
@@ -29,7 +29,7 @@ export class CustomerDetailsComponent implements OnInit , OnChanges {
   ngOnInit(): void {
     this.customerName = this.customerRecord.Name;
     this.customerEmail = this.customerRecord.Email;
-    console.log("ng oninit Input data is " , this.customerRecord);
+    //console.log("ng oninit Input data is " , this.customerRecord);
   }
 
 }

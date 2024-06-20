@@ -25,7 +25,10 @@ export class CustomerRegistraionHistoryComponent implements OnInit, OnChanges {
     //setTimeout(() => {
       this.CustomerRecords.push(this.ihistoryRecord);
 
-      console.log(this.CustomerRecords);
+
+      //Need to write the code for remove duplicate recordds.
+
+      //console.log(this.CustomerRecords);
     //}, 1000);
 
 

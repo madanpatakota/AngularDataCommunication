@@ -1,24 +1,23 @@
-
 <div class="container" style="background-color: antiquewhite">
   <!--Main page Heading section-->
 
   <div class="m-3">
     <h6 class="display-6">Customer Page</h6>
-    <hr>
+    <hr />
     <div class="row mt-4 p-3 text-light">
       <div class="col-12">
         <div class="row">
           <div class="col-3">
             <span class="text-primary fw-bold"> Customer Name : </span>
             <!-- <span class="text-monospace fs-5"> {{ Customer.Name }}</span> -->
-            <input 
+            <input
               type="text"
               class="form-control"
               [value]="Customer.Name"
               #customerName
             />
           </div>
-          
+
           <div class="col-3">
             <span class="text-primary fw-bold"> Customer Password : </span>
             <!-- <span class="text-monospace fs-5"> {{ Customer.Password }}</span> -->
@@ -33,11 +32,11 @@
             <span class="text-primary fw-bold"> Customer Email : </span>
             <!-- <span class="text-monospace fs-5"> {{ Customer.Email }}</span> -->
             <input
-            type="text"
-            class="form-control"
-            [value]="Customer.Email"
-            #customerEmail
-          />
+              type="text"
+              class="form-control"
+              [value]="Customer.Email"
+              #customerEmail
+            />
           </div>
           <div class="col-1"></div>
           <div class="col-1">
@@ -45,10 +44,15 @@
               type="button"
               value="Click"
               class="btn btn-primary"
-              (click)="updateCustomerName(customerName, customerPassword , customerEmail)"
+              (click)="
+                updateCustomerName(
+                  customerName,
+                  customerPassword,
+                  customerEmail
+                )
+              "
             />
           </div>
-          
         </div>
       </div>
     </div>
@@ -57,23 +61,39 @@
   <div class="mt-4">
     <div class="row">
       <div class="col-md-6">
-      <app-customer-registraion (customerEventEmitter) = "evtCustomerReceiveInfo($event)">
-      <!-- <input type="text"   (keyUp)="" /> -->
-      </app-customer-registraion>
+        <app-customer-registraion
+          [rcustomerRecord]="Customer"
+          (customerEventEmitter)="evtCustomerReceiveInfo($event)"
+        >
+          <!-- <input type="text"   (keyUp)="" /> -->
+          <textarea
+            class="form-control"
+            placeholder="Enter your personal details"
+            rows="4"
+            id="message"
+            [value] = "title"
+            #personalmessagedetails
+          >
+          </textarea>
+        </app-customer-registraion>
       </div>
       <div class="col-md-6">
-        <app-customer-details [customerRecord]="Customer"></app-customer-details>
-      <!-- //<p                     id="ParagraphID">          </p> -->
+        <app-customer-details
+         [customerRecord]="Customer">
+        </app-customer-details>
+        <!-- //<p                     id="ParagraphID">          </p> -->
       </div>
     </div>
   </div>
   <div class="mt-4">
     <div class="row">
       <div class="col-md-10">
-        <app-customer-registraion-history [historyCustomerRecord]="Customer"></app-customer-registraion-history>
-  <!--  <input  type ="text"     [value]="" /> -->
+        <app-customer-registraion-history
+          [historyCustomerRecord]="Customer"
+        ></app-customer-registraion-history>
+        <!--  <input  type ="text"     [value]="" /> -->
       </div>
     </div>
   </div>
-  <br>
+  <br />
 </div>
